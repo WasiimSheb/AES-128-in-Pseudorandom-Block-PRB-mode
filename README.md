@@ -1,4 +1,4 @@
-# 🔐 AES-128 in Pseudorandom Block (PRB) Mode
+# AES-128 in Pseudorandom Block (PRB) Mode
 
 This project implements AES-128 from scratch in C++, and uses it in a textbook-defined encryption mode called **Pseudorandom Block (PRB)**. The PRB mode is based on encrypting a fresh random block `R` and XORing it with the plaintext to produce the ciphertext. Both `R` and the ciphertext are used for decryption.
 
