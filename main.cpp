@@ -2,7 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <array>
-#include "prb.cpp"  // include PRB logic
+#include "src/prb.cpp"  // include PRB logic
 
 void printBlock(const std::array<uint8_t, 16>& block) {
     for (auto b : block) {

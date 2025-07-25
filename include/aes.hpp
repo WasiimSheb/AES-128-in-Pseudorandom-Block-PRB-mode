@@ -8,16 +8,18 @@
 class AES128 {
 public:
     AES128(const std::array<uint8_t, 16>& key);
-    std::array<uint8_t, 16> encryptBlock(const std::array<uint8_t, 16>& input);
+
+    std::array<uint8_t, 16> encryptBlock(const std::array<uint8_t, 16>& input) const;
 
 private:
-    void keyExpansion();
-    void addRoundKey(std::array<uint8_t, 16>& state, int round);
-    void subBytes(std::array<uint8_t, 16>& state);
-    void shiftRows(std::array<uint8_t, 16>& state);
-    void mixColumns(std::array<uint8_t, 16>& state);
+    void keyExpansion();  // modifies internal state, NOT const
 
-    std::array<uint8_t, 16> roundKeys[11];  // 11 round keys for AES-128
+    void addRoundKey(std::array<uint8_t, 16>& state, int round) const;
+    void subBytes(std::array<uint8_t, 16>& state) const;
+    void shiftRows(std::array<uint8_t, 16>& state) const;
+    void mixColumns(std::array<uint8_t, 16>& state) const;
+
+    std::array<uint8_t, 16> roundKeys[11];
     std::array<uint8_t, 16> key;
 };
 
